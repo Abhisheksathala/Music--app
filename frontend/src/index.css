@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+::-webkit-scrollbar{
+  display: none;
+}
+/* CustomAudioPlayer.css */
+
+.custom-audio-player {
+  background-color: #1f2937; /* Match the background of your app */
+  border-radius: 0.5rem;
+  box-shadow: none;
+  color: white;
+}
+
+/* CustomAudioPlayer.css */
+
+.custom-audio-player {
+  background-color: #1f2937; /* Match the background of your app */
+  border-radius: 0.5rem;
+  box-shadow: none;
+  color: white;
+  width: 100%;
+  max-width: 400px; /* Adjust as needed */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.custom-audio-player .rhap_header,
+.custom-audio-player .rhap_footer {
+  background-color: transparent;
+  color: white;
+}
+
+.custom-audio-player .rhap_progress-bar {
+  background-color: #4b5563; /* Tailwind gray-700 */
+}
+
+.custom-audio-player .rhap_progress-indicator {
+  background-color: #10b981; /* Tailwind green-500 */
+}
+
+.custom-audio-player .rhap_progress-filled {
+  background-color: #10b981; /* Tailwind green-500 */
+}
+
+.custom-audio-player .rhap_controls {
+  color: white;
+}
+
+.custom-audio-player .rhap_controls button {
+  color: white;
+}
+
+.custom-audio-player .rhap_volume-indicator {
+  background-color: #10b981; /* Tailwind green-500 */
+}
+
