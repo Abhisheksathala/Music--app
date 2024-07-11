@@ -1,10 +1,16 @@
+import { useNavigate } from "react-router-dom";
 import { assets } from "../../assets/assets";
 
+
 const Sidebar = () => {
+
+
+  const   naviget =   useNavigate();
+
   return (
     <div className="w-1/4 h-full p-2 flex flex-col gap-2 text-white  lg:flex bg-[#121212]">
       <div className="flex flex-col justify-around gap-2 p-4 bg-[#121212] rounded">
-        <div className="flex items-center gap-3 pl-2 cursor-pointer hover:bg-[#1a1a1a] p-2 rounded">
+        <div onClick={()=>{naviget('/')}} className="flex items-center gap-3 pl-2 cursor-pointer hover:bg-[#1a1a1a] p-2 rounded">
           <img src={assets.home_icon} alt="Home icon" className="w-6 h-6" />
           <p>Home</p>
         </div>

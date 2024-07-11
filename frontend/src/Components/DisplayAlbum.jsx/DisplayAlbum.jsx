@@ -1,6 +1,8 @@
 import Navbar from "./../Navbar/Navbar";
 import { useParams } from "react-router-dom";
 import { albumsData, songsData } from "../../assets/assets";
+import { useContext } from "react";
+import { Playercontext } from "../../Context/Playercontext";
 
 const DisplayAlbum = () => {
   const { id } = useParams();
@@ -8,6 +10,8 @@ const DisplayAlbum = () => {
   // Find the album based on the id
   const albumData = albumsData[id];
   const albumSongs = songsData;
+
+  const {platWithId} = useContext(Playercontext)
 
   if (!albumData) {
     return (
@@ -35,7 +39,9 @@ const DisplayAlbum = () => {
         <h2 className="text-3xl font-bold my-8">Songs</h2>
 
         {albumSongs.map((song, index) => (
-          <div key={index} className="bg-gray-800 p-4 rounded-md shadow hover:bg-gray-700 transition duration-200 mb-4">
+          <div onClick={()=>{
+            platWithId(song.id)
+          }} key={index} className="bg-gray-800 p-4 rounded-md shadow hover:bg-gray-700 transition duration-200 mb-4">
             <div className="flex items-center">
               <img className="w-20 h-20 object-cover rounded-md mr-4" src={song.image} alt={song.name} />
               <div className="flex-grow flex gap-2 ">

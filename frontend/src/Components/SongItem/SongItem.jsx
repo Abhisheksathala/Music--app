@@ -1,7 +1,10 @@
+import { useContext } from "react";
+import { Playercontext } from "../../Context/Playercontext";
 
 const SongItem = ({ name, image, desc, id }) => {
+  const {platWithId} = useContext(Playercontext)
   return (
-    <div className="bg-gray-900 rounded-lg overflow-hidden shadow-lg cursor-pointer hover:shadow-xl transform hover:scale-105 transition duration-300">
+    <div onClick={()=>platWithId(id)} className="bg-gray-900 rounded-lg overflow-hidden shadow-lg cursor-pointer hover:shadow-xl transform hover:scale-105 transition duration-300">
       <img src={image} alt={name} className="w-full h-64 object-cover rounded-t-lg" />
       <div className="p-4">
         <h2 className="text-xl font-semibold text-white mb-2">{name}</h2>
