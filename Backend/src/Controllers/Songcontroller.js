@@ -23,7 +23,7 @@ const Addsongs = async (req, res) => {
       name,
       desc,
       album,
-      audio: audioUpload.secure_url,
+      file: audioUpload.secure_url,
       image: imageUpload.secure_url,
       duration,
     };
@@ -39,11 +39,62 @@ const Addsongs = async (req, res) => {
 };
 
 const ListSongs = async (req, res) => {
-    try {
-        
-    } catch (error) {
-        
+  try {
+    const Allsongs = await songModel.find({});
+
+    if (!Allsongs) {
+      return res
+        .status(404)
+        .json({ success: false, message: "No songs found" });
     }
+
+    return res
+      .status(200)
+      .json({ success: true, message: "All songs", data: Allsongs });
+  } catch (error) {
+    console.log(error);
+    return res.status(400).json({
+      success: false,
+      message: "something went wrong",
+      error: error.message,
+    });
+  }
 };
 
-export { Addsongs, ListSongs };
+//remove song by the id
+
+const removeSong = async (req, res) => {
+  try {
+    const { _id } = req.body;
+
+    if (!_id) {
+      return res.status(400).json({
+        success: false,
+        message: "Missing song ID in request body",
+      });
+    }
+
+    const song = await songModel.findByIdAndDelete(_id);
+
+    if (!song) {
+      return res
+        .status(404)
+        .json({ success: false, message: "song not found" });
+    }
+
+    return res.status(201).json({
+      success: true,
+      message: "song removed successfully",
+      data: song,
+    });
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({
+      success: false,
+      message: "something went wrong",
+      error: error.message,
+    });
+  }
+};
+
+export { Addsongs, ListSongs, removeSong };

@@ -1,5 +1,5 @@
 import express from 'express';
-import { Addsongs, ListSongs } from '../Controllers/Songcontroller.js';
+import { Addsongs, ListSongs ,removeSong} from '../Controllers/Songcontroller.js';
 import upload from '../Multer.js/Multer.js';
 
 const RouteSongs = express.Router();
@@ -11,7 +11,8 @@ RouteSongs.post(
   Addsongs
 );
 
-// Route to list songs
 RouteSongs.get('/listsong', ListSongs);
+// Route to remove a song by ID
+RouteSongs.post('/remove', removeSong);
 
 export default RouteSongs;
