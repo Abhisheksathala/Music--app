@@ -3,11 +3,12 @@ import mongoose from "mongoose";
 const IndexDB = async ()=>{
 
     try {
-        const ConnectDBInstance  =  mongoose.connect('mongosh "mongodb+srv://cluster0.e9f5ssy.mongodb.net/" --apiVersion 1 --username abhisheksathala296')
+        const ConnectDBInstance  = await  mongoose.connect(process.env
+        .MONGODB_URI
+        )
         if(ConnectDBInstance){
             console.log(
-                "\n- CONNECTED TO MONGODB FROM INDEXdb OF CONFIG",
-                ConnectDBInstance.connection.host
+                "\n- CONNECTED TO MONGODB FROM INDEXdb OF CONFIG"
               );
 
         }
