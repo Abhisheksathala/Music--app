@@ -16,7 +16,7 @@ app.use(cors())
 // app.use(express.static())
 
 //routes
-app.use('/api/v1/Songs',RouteSongs)
+app.use('/api/Songs',RouteSongs)
 
 
 
