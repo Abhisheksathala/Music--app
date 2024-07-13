@@ -68,7 +68,7 @@ const removeSong = async (req, res) => {
     const { _id } = req.body;
 
     if (!_id) {
-      return res.status(400).json({
+       res.status(400).json({
         success: false,
         message: "Missing song ID in request body",
       });
@@ -96,5 +96,8 @@ const removeSong = async (req, res) => {
     });
   }
 };
+
+
+
 
 export { Addsongs, ListSongs, removeSong };

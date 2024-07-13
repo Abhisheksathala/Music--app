@@ -6,6 +6,7 @@ import connectCloudinary from './src/Cloudinary/Cloudinay.js';
 
 //imports of routes
 import RouteSongs from './src/Routes/SongRoute.js'
+import albumRouter from './src/Routes/AlbumRoutre.js'
 
 const app  = express()
 const port = process.env.PORT || 4000
@@ -17,6 +18,7 @@ app.use(cors())
 
 //routes
 app.use('/api/Songs',RouteSongs)
+app.use('/api/Albums',albumRouter)
 
 
 
