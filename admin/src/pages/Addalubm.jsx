@@ -1,10 +1,10 @@
 
-const Addalubm = () => {
+const Addalbum = () => {
   return (
     <div>
-      album
+      
     </div>
   )
 }
 
-export default Addalubm
+export default Addalbum

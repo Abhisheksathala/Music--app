@@ -2,7 +2,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Routes, Route } from "react-router-dom";
 import Addsong from "./pages/Addsong";
-import Addalubm from "./pages/Addalubm";
+import Addalbum from "./pages/Addalubm";
 import Listsong from "./pages/Listsong";
 import ListAlbum from "./pages/ListAlbum";
 import Sidebar from "./Components/sidebar";
@@ -18,7 +18,7 @@ const App = () => {
         <div className="pt-8 pl-5 sm:pt-12 sm:pl-12">
           <Routes>
             <Route path="/add-song" element={<Addsong />} />
-            <Route path="/add-album" element={<Addalubm />} />
+            <Route path="/add-album" element={<Addalbum />} />
             <Route path="/list-song" element={<Listsong />} />
             <Route path="/list-album" element={<ListAlbum />} />
           </Routes>
