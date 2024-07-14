@@ -65,16 +65,16 @@ const ListSongs = async (req, res) => {
 
 const removeSong = async (req, res) => {
   try {
-    const { _id } = req.body;
+    const { id } = req.body;
 
-    if (!_id) {
+    if (!id) {
        res.status(400).json({
         success: false,
         message: "Missing song ID in request body",
       });
     }
 
-    const song = await songModel.findByIdAndDelete(_id);
+    const song = await songModel.findByIdAndDelete(id);
 
     if (!song) {
       return res
